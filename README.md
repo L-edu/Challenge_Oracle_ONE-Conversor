@@ -20,11 +20,10 @@ O programa oferece as seguintes funcionalidades:
 2. Baixe ou clone este repositório.
 3. Abra o terminal e navegue até o diretório onde os arquivos do projeto estão localizados.
 4. Compile as classes executando os seguintes comandos:
-
+![image](https://github.com/L-edu/Challenge_Oracle_ONE-Conversor/blob/main/cms_files_10224_1671211937Prancheta_8.png)
 ```sh
 javac application/Programa.java
 javac application/Funcao.java
 javac conversor_moeda/ConversorMoeda.java
 javac conversor_temperatura/ConversorTemperatura.java
 
-![image](https://github.com/L-edu/Challenge_Oracle_ONE-Conversor/blob/main/cms_files_10224_1671211937Prancheta_8.png)
