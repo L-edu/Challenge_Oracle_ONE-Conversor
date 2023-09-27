@@ -1,5 +1,8 @@
 package application;
 import javax.swing.*;
+
+import conversor_comprimento.ConversorComprimento;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -10,6 +13,7 @@ public class Funcao {
 	
 	ConversorMoeda moedas = new ConversorMoeda();
 	ConversorTemperatura temperatura = new ConversorTemperatura();
+	ConversorComprimento comprimento = new ConversorComprimento();
 	
 	public void converterMoeda(double valorRecebido, double cotacao) {
 		String opcao = (JOptionPane.showInputDialog(null,
@@ -59,6 +63,38 @@ public class Funcao {
                 break;
         }
     }
+    
+    public void converterComprimento(double valorRecebido) {
+        String opcao = (JOptionPane.showInputDialog(null, "Escolha uma opção para converter", "Comprimento", JOptionPane.PLAIN_MESSAGE, null, new Object[]{
+                "De Metro para Quilômetro",
+                "De Metro para Hectômetro",
+                "De Metro para Decametro",
+                "De Metro para Decímetro",
+                "De Metro para Centímetro",
+                "De Metro para Milímetro"}, "Escolha")).toString();
+        
+        switch (opcao) {
+        case "De Metro para Quilômetro":
+            comprimento.converterMetroParaQuilometro(valorRecebido);
+            break;
+        case "De Metro para Hectômetro":
+            comprimento.converterMetroParaHectometro(valorRecebido);
+            break;
+        case "De Metro para Decametro":
+            comprimento.converterMetroParaDecametro(valorRecebido);
+            break;
+        case "De Metro para Decímetro":
+           comprimento.converterMetroParaDecimetro(valorRecebido);
+            break;
+        case "De Metro para Centímetro":
+            comprimento.converterMetroParaCentimetro(valorRecebido);
+            break;
+        case "De Metro para Milímetro":
+        	comprimento.converterMetroParaMilimetro(valorRecebido);
+            break;
+        }
+    }
+    
     public static final Map<String, String> moedaNomes = new HashMap<>();
     static {
         moedaNomes.put("De Reais a Dólares", "Dólares");

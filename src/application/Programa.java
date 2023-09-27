@@ -13,7 +13,7 @@ public class Programa {
                 "Menu", 
                 JOptionPane.QUESTION_MESSAGE, 
                 null, 
-                new Object[]{"Conversor de Moeda", "Conversor de Temperatura"}, 
+                new Object[]{"Conversor de Moeda", "Conversor de Temperatura", "Conversor de Comprimento"}, 
                 "Escolha"
             ).toString();
 
@@ -38,6 +38,21 @@ public class Programa {
                         double valorRecebido = Double.parseDouble(JOptionPane.showInputDialog("Insira um valor de temperatura para conversão"));
                         
                         funcao.converterTemperatura(valorRecebido);
+
+                        int resposta = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
+                        if (resposta != JOptionPane.OK_OPTION) {
+                            JOptionPane.showMessageDialog(null, "Programa finalizado");
+                            return;
+                        }
+                    } catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(null, "Valor inválido");
+                    }
+                    break;
+                case "Conversor de Comprimento":
+                    try {
+                        double valorRecebido = Double.parseDouble(JOptionPane.showInputDialog("Insira um valor de medida para conversão"));
+                        
+                        funcao.converterComprimento(valorRecebido);
 
                         int resposta = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
                         if (resposta != JOptionPane.OK_OPTION) {
